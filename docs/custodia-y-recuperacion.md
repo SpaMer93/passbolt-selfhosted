@@ -2,7 +2,7 @@
 
 El problema estructural de Passbolt: la llave privada de cada usuario vive cifrada con su passphrase. Si la pierde, sus secretos son irrecuperables **incluso para el administrador del servidor**. Un equipo que adopta el gestor necesita una respuesta a esa pregunta antes de usarlo.
 
-![Flujo de custodia](flujo-custodia-recuperacion.png)
+![Flujo de custodia](../media/flujo-custodia.png)
 
 ## Modelo
 
