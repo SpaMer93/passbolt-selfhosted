@@ -68,11 +68,11 @@ Diario, cifrado, y verificado —no "configurado":
 
 ## Recuperación de usuarios
 
-Un gestor de contraseñas tiene un modo de fallo propio: el usuario pierde su recovery kit o su passphrase y, sin llave privada, sus secretos son irrecuperables — incluso para el administrador.
+Passbolt tiene un agujero conocido: si un usuario pierde su recovery kit o su passphrase, sus secretos se pierden con él, incluso para el administrador del servidor.
 
-La solución está documentada en [`docs/`](docs/): custodia de los kits de cada usuario cifrados con una llave institucional, cuyo secreto se reparte entre custodios con esquema de umbral (Shamir, 2-de-3), y un ritual de recuperación que reconstruye esa llave **solo en memoria**, entrega un kit nuevo y no deja rastro. Más el panel de reprotección: herramienta 100 % cliente (OpenPGP en el navegador del operador, sin servidor, sin red, sin logs) que cambia la passphrase de un kit conservando el fingerprint y verifica que la passphrase anterior **ya no abre** la copia nueva.
+En este despliegue hay un procedimiento para eso. Los kits quedan en custodia cifrada y la recuperación exige la participación de varios responsables: ninguna persona sola, ninguna llave sola. Cambiar la passphrase de un kit conserva el fingerprint original, así que el usuario no tiene que volver a enrolarse.
 
-![Flujo de custodia](media/flujo-custodia.png)
+Ese procedimiento y la herramienta que lo acompaña no están en este repositorio. Es la parte del proyecto que más trabajo tiene detrás y queda fuera de la exhibición.
 
 ## Stack
 
